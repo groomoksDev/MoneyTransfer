@@ -1,7 +1,9 @@
-import static spark.Spark.*;
+import controller.api.RoutingController;
 
 public class MoneyTransfer {
+
     public static void main(String[] args) {
-        get("/sendMoney", (req, res) -> "Money was sended");
+        RoutingController routingController = new RoutingController();
+        routingController.ListenRouts();
     }
 }
