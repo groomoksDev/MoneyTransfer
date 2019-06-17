@@ -14,7 +14,7 @@ public class MoneyControllerTest {
         AccountVerifier accountVerifier = new AccountVerifierImpl();
         MoneyManager moneyManager = new MoneyManagerImpl();
         moneyController = new MoneyController(accountVerifier, moneyManager);
-        Assert.assertEquals("Sending successful",moneyController.sendMoney(1L,2L,3.0));
+        Assert.assertEquals("Not enough money",moneyController.sendMoney(1L,2L,3.0));
     }
 
     @org.junit.Test
@@ -22,6 +22,6 @@ public class MoneyControllerTest {
         AccountVerifier accountVerifier = new AccountVerifierImpl();
         MoneyManager moneyManager = new MoneyManagerImpl();
         moneyController = new MoneyController(accountVerifier, moneyManager);
-        Assert.assertEquals("0.0", moneyController.getAccountMoneyInfo(1L), 0.0);
+        Assert.assertEquals("0.0", moneyController.getAccountMoneyInfo(1L));
     }
 }
