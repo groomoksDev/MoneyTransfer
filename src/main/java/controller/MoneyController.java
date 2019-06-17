@@ -14,12 +14,11 @@ public class MoneyController {
     }
 
 
-    public boolean sendMoney(Long fromId, Long toId, Double sum){
-        if (accountVerifier.hasMoneyForSend(fromId)){
-            moneyManager.sendMoney(fromId, toId, sum);
-            return true;
+    public String sendMoney(Long fromId, Long toId, Double sum){
+        if (accountVerifier.hasMoneyForSend(fromId, sum) && moneyManager.sendMoney(fromId, toId, sum)){
+            return "Money send successful";
         } else {
-            return false;
+            return "Not enough money";
         }
     }
 

@@ -17,8 +17,8 @@ public class MoneyManagerImpl implements MoneyManager {
     public boolean sendMoney(Long fromId, Long toId, Double sum) {
         try{
             MoneyOperation operation = new MoneyOperationImpl();
-            operation.extractMoneyFromAccoun(fromId);
-            operation.putMoneyToAccount(toId);
+            operation.extractMoneyFromAccount(fromId, sum);
+            operation.putMoneyToAccount(toId, sum);
             return true;
         } catch (Exception ex){
             logger.info("Error send money operation");

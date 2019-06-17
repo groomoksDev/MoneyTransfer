@@ -29,4 +29,19 @@ class TemporaryDataImpl {
     static Account getInfoAccount(Long accountId) {
         return accounts.stream().filter(a->a.getId().equals(accountId)).findFirst().orElse(null);
     }
+
+    static boolean hasMoneyForSend(Long accountId, Double sum) {
+        Account account = getInfoAccount(accountId);
+        return account.getSum() != 0.0 && account.getSum() >= sum;
+    }
+
+    static void extractMoneyFromAccount(Long accountId, Double sum){
+        Account account = getInfoAccount(accountId);
+        account.setSum(account.getSum()-sum);
+    }
+
+    static void putMoneyToAccount(Long accountId, Double sum){
+        Account account = getInfoAccount(accountId);
+        account.setSum(account.getSum()+sum);
+    }
 }

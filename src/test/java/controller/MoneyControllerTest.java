@@ -14,7 +14,7 @@ public class MoneyControllerTest {
         AccountVerifier accountVerifier = new AccountVerifierImpl();
         MoneyManager moneyManager = new MoneyManagerImpl();
         moneyController = new MoneyController(accountVerifier, moneyManager);
-        Assert.assertTrue(moneyController.sendMoney(1L,2L,3.0));
+        Assert.assertEquals("Sending successful",moneyController.sendMoney(1L,2L,3.0));
     }
 
     @org.junit.Test

@@ -24,12 +24,11 @@ private static Logger logger = Logger.getLogger(RoutingController.class.getName(
         post("/sendMoney", (req, res) ->
         {
             if (reqParamsVerifier.verifyPatamsForSendMoney(req)) {
-                moneyController.sendMoney(Long.parseLong(req.queryParams("fromId")), Long.parseLong(req.queryParams("toId")),
+                return moneyController.sendMoney(Long.parseLong(req.queryParams("fromId")), Long.parseLong(req.queryParams("toId")),
                         Double.parseDouble(req.queryParams("sum")));
-                return true;
             } else {
-                logger.info("Error sending money");
-                return false;
+                    logger.info("Error sending money");
+                return "Error sending money";
             }
         });
 
