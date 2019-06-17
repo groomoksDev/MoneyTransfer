@@ -1,6 +1,7 @@
 package services.bl;
 
 import controller.api.RoutingController;
+import model.Account;
 import services.dao.MoneyOperation;
 import services.dao.MoneyOperationImpl;
 
@@ -27,14 +28,18 @@ public class MoneyManagerImpl implements MoneyManager {
     }
 
     @Override
-    public double getAccountMoneyInfo(Long accountId) {
+    public String getAccountMoneyInfo(Long accountId) {
         try{
             MoneyOperation operation = new MoneyOperationImpl();
-            operation.getAccountMoneyInfo(accountId);
-            return 10.0;
+            Account account = operation.getAccountInfo(accountId);
+            if(account == null){
+                return "Account not found";
+            } else {
+                return String.valueOf(account.getSum());
+            }
         } catch (Exception ex){
             logger.info("Error getting money info operation");
-            return -0.0;
+            return "Error getting money info operation";
         }
 
     }

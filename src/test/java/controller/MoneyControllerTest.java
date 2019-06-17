@@ -22,6 +22,6 @@ public class MoneyControllerTest {
         AccountVerifier accountVerifier = new AccountVerifierImpl();
         MoneyManager moneyManager = new MoneyManagerImpl();
         moneyController = new MoneyController(accountVerifier, moneyManager);
-        Assert.assertEquals(10.0, moneyController.getAccountMoneyInfo(1L), 0.0);
+        Assert.assertEquals("0.0", moneyController.getAccountMoneyInfo(1L), 0.0);
     }
 }

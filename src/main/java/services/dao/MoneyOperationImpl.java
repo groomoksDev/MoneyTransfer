@@ -14,9 +14,7 @@ public class MoneyOperationImpl implements MoneyOperation {
     }
 
     @Override
-    public double getAccountMoneyInfo(Long aLong) throws Exception {
-        Account account = new Account();
-        account.setSum(10.0);
-        return account.getSum();
+    public Account getAccountInfo(Long accountId) throws Exception {
+        return TemporaryDataImpl.getInfoAccount(accountId);
     }
 }

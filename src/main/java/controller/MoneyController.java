@@ -23,7 +23,7 @@ public class MoneyController {
         }
     }
 
-    public double getAccountMoneyInfo(Long accountId){
+    public String getAccountMoneyInfo(Long accountId){
         return moneyManager.getAccountMoneyInfo(accountId);
     }
 
