@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="moneytransfer:jar">
+  <artifact type="jar" build-on-make="true" name="moneytransfer:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/moneytransfer_jar</output-path>
     <root id="archive" name="moneytransfer.jar">
       <element id="module-output" name="moneytransfer" />
