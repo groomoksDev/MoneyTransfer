@@ -1,6 +1,5 @@
 # MoneyTransfer
-Look REDME on 
-2 ways:
+For look how it work you have 2 ways:
 1 - download jar
 2 - run idea
 a. GET - in browser type: localhost:4567/getAccountMoneyInfo/1 - Return 0.0
